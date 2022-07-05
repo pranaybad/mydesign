@@ -1,0 +1,329 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+        *,
+        *::after,
+        *::before {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .html {
+            font-size: 62.5%;
+        }
+        
+        .navbar input[type="checkbox"],
+        .navbar .hamburger-lines {
+            display: none;
+        }
+        
+        .container {
+            max-width: 1200px;
+            width: 90%;
+            margin: auto;
+        }
+        
+        .navbar {
+            /* box-shadow: 0px 5px 10px 0px #aaa; */
+            position: fixed;
+            width: 100%;
+            /* background: #fff; */
+            color: #a67564;
+            opacity: 0.85;
+            z-index: 100;
+        }
+        
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            height: 64px;
+            align-items: center;
+        }
+        
+        .menu-items {
+            order: 2;
+            display: flex;
+            margin-right: 180px;
+        }
+        
+        .logo {
+            order: 1;
+            font-size: 2.3rem;
+        }
+        
+        .menu-items li {
+            list-style: none;
+            margin-left: 1.5rem;
+            font-size: 1.3rem;
+            color: #a67564;
+        }
+        
+        .navbar a {
+            color: #a67564;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease-in-out;
+        }
+        
+        .navbar a:hover {
+            color: #a67564;
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                opacity: 0.95;
+            }
+            .navbar-container input[type="checkbox"],
+            .navbar-container .hamburger-lines {
+                display: block;
+            }
+            .navbar-container {
+                display: block;
+                position: relative;
+                height: 64px;
+            }
+            .navbar-container input[type="checkbox"] {
+                position: absolute;
+                display: block;
+                height: 32px;
+                width: 30px;
+                top: 20px;
+                left: 20px;
+                z-index: 5;
+                opacity: 0;
+                cursor: pointer;
+            }
+            .navbar-container .hamburger-lines {
+                display: block;
+                height: 28px;
+                width: 35px;
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                z-index: 2;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+            .navbar-container .hamburger-lines .line {
+                display: block;
+                height: 4px;
+                width: 100%;
+                border-radius: 10px;
+                background: #333;
+            }
+            .navbar-container .hamburger-lines .line1 {
+                transform-origin: 0% 0%;
+                transition: transform 0.3s ease-in-out;
+            }
+            .navbar-container .hamburger-lines .line2 {
+                transition: transform 0.2s ease-in-out;
+            }
+            .navbar-container .hamburger-lines .line3 {
+                transform-origin: 0% 100%;
+                transition: transform 0.3s ease-in-out;
+            }
+            .navbar .menu-items {
+                padding-top: 100px;
+                /* background: #fff; */
+                height: 100vh;
+                max-width: 300px;
+                transform: translate(-150%);
+                display: flex;
+                flex-direction: column;
+                margin-left: -40px;
+                padding-left: 40px;
+                transition: transform 0.5s ease-in-out;
+                /* box-shadow: 5px 0px 10px 0px #aaa; */
+                overflow: scroll;
+            }
+            .navbar .menu-items li {
+                margin-bottom: 1.8rem;
+                font-size: 1.1rem;
+                font-weight: 500;
+            }
+            .logo {
+                position: absolute;
+                top: 10px;
+                right: 15px;
+                font-size: 2.5rem;
+            }
+            .navbar-container input[type="checkbox"]:checked~.menu-items {
+                transform: translateX(0);
+            }
+            .navbar-container input[type="checkbox"]:checked~.hamburger-lines .line1 {
+                transform: rotate(45deg);
+            }
+            .navbar-container input[type="checkbox"]:checked~.hamburger-lines .line2 {
+                transform: scaleY(0);
+            }
+            .navbar-container input[type="checkbox"]:checked~.hamburger-lines .line3 {
+                transform: rotate(-45deg);
+            }
+        }
+        
+        @media (max-width: 500px) {
+            .navbar-container input[type="checkbox"]:checked~.logo {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body style="background-color: #d9d2cc;">
+    <nav class="navbar">
+        <div class="navbar-container container">
+            <input type="checkbox" name="" id="">
+            <div class="hamburger-lines">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+            </div>
+            <ul class="menu-items">
+                <li style="font-family: Josefin Sans; font-size: 18px; font-weight: 100;"><a href="highlights.html">Highlights</a> </li>
+                <li style="font-family: Josefin Sans; font-size: 18px; font-weight: 100;"><a href="amenities.html">Amenities</a></li>
+                <li style="font-family: Josefin Sans; font-size: 18px; font-weight: 100;"><a href="#">Offers</a></li>
+                <li style="font-family: Josefin Sans; font-size: 18px; font-weight: 100;"><a href="gallery.html">Gallery</a> </li>
+                <li style="font-family: Josefin Sans; font-size: 18px; font-weight: 100;"><a href="location.html">Location</a> </li>
+                <!-- <li style="font-family: Josefin Sans; font-size: 18px; font-weight: 100;"><a href="#">Gallery</a> &nbsp; <span style="font-weight: bold;color: #d9b18e;">|</span> </li>
+                <li style="font-family: Josefin Sans; font-size: 18px; font-weight: 100;"><a href="#">Location</a>&nbsp; <span style="font-weight: bold;color: #d9b18e;">|</span> </li> -->
+                <li style="font-family: Josefin Sans; font-size: 18px; font-weight: 100;"><a href="#">You Liked It! Contact Us</a> <span style="font-weight: bold;color: #d9b18e;"></span></li>
+            </ul>
+            <!-- <h1 class="logo">Navbar</h1> -->
+            <img src="https://pngimg.com/uploads/twitter/twitter_PNG3.png" width="60px" height="60px" alt="">
+        </div>
+    </nav>
+</body>
+
+</html>
+
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+    * {
+        box-sizing: border-box;
+    }
+    
+    p {
+        font-size: 20px;
+        font-family: sans-serif;
+        color: #6439a9;
+    }
+    
+    .container1 {
+        padding: 100px 30px;
+        width: 100%;
+        /* margin: 0 auto; */
+        max-width: 900px;
+    }
+    /* // clearfix */
+    
+    .image-stack::after {
+        content: ' ';
+        display: table;
+        clear: both;
+    }
+    
+    .image-stack__item--top {
+        float: left;
+        /* width: 66%; */
+        margin-right: -100%;
+        padding-top: 15%;
+        position: relative;
+        z-index: -1;
+        max-width: 100%;
+        min-width: 50px;
+        height: auto;
+    }
+    
+    .image-stack__item--bottom {
+        max-width: 100%;
+        min-width: 50px;
+        float: right;
+        width: 75%;
+        /* z-index: 10; */
+        border: 1px;
+        /* padding: 10px; */
+        /* box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; */
+    }
+    
+    ig {
+        width: 100%;
+    }
+    
+    @media (max-width: 768px) {
+        .image-stack__item image-stack__item--top {
+            display: flex;
+            background-color: pink;
+        }
+        .image-stack__item--bottom {
+            max-width: 100%;
+            min-width: 50px;
+        }
+    }
+    
+    .para {
+        align-items: flex-end;
+    }
+    
+    @media only screen and (max-width: 768px) {
+        /* For mobile phones: */
+        .ig1 {
+            width: 100%;
+            height: auto;
+            margin-bottom: 900px;
+        }
+        .ig {
+            width: 100%;
+            margin-top: 330px;
+            min-width: 50px;
+        }
+        h2 .myd1 {
+            margin: auto
+        }
+    }
+    /* @media only screen and (max-width: 375px) {
+        .myd1 {
+            color: lightblue;
+        }
+    } */
+</style>
+
+
+<div class="container1">
+    <!-- <p>Float method</p> -->
+    <div class="image-stack" style="margin-top: 15px; margin-left: 0px;">
+
+        <div class="image-stack__item image-stack__item--top">
+
+            <img class="ig" src="./Overviewsection/01.png" width="400px" height="300px" alt="">
+        </div>
+        <div class="image-stack__item image-stack__item--bottom">
+            <img class="ig1" src="./Overviewsection//02.png" width="300px" height="370px" alt="">
+        </div>
+    </div>
+    <!-- <p>Text can go under here yabba dabba doo.</p> -->
+
+    </p>
+</div>
+
+<div class="myd" style="float: right; margin-left: 50px; margin-top: -480px;">
+    <p style="word-wrap: break-word;">
+        <h2 class="myd1" style="font-size:60px;margin-left: 700px;color: #d9b18e;font-family: Josefin Sans; font-size: 48px; font-weight: 100;"> Overview</h2>
+
+        <!-- <p style="font-size:5vw;margin-left: 600px">Resize the browser window to see how the text size scales.</p> -->
+
+        <p class="myd2" style="font-size:20px;margin-left: 550px; margin-right: 20px;color: #a67564;font-family: Josefin Sans; font-size: 18px; font-weight: 100;padding-top: 40px;line-height: 1.6">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked
+            up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
+
+        <!-- <p>Viewport is the browser window size. 1vw = 1% of viewport width. If the viewport is 50cm wide, 1vw is 0.5cm.</p> -->
+    </p>
+</div>
